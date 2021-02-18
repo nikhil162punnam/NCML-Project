@@ -1,0 +1,17 @@
+\section{Previous Work}
+%Whatever is mentioned in the report comments
+Many existing models \cite{Kaggle1} on Kaggle were built using Bidirectional Gated Recurrent Unit (GRU) with and without any pre-trained embeddings provided in the dataset. First, the training dataset was split into training and validation samples, with training set holding 90\% of the data and the validation set holding the remaining 10\% data.\\For pre-processing, the model filled up the missing values in the text column with \say{na}. The text column was tokenized and converted into vector sequences. Next, the sequence was padded as needed; if the number of words in the text were greater than the maximum length of the text, then it was truncated to maximum length or if the number of words in the text was less than maximum length, zeros were added for the remaining values.\cite{Kaggle}
+
+\subsection{Model Architecture}
+There were two models built and their performances were compared to each other. The models are stated as follows:
+\begin{itemize}
+		\item Model 1: Without using pre-trained embeddings- The Bidirectional Gated Recurrent Unit (GRU) model was trained using 1 input layer with 128 neurons, embedding of size 300, maximum number of words in a question to be 100 (maximum length), dropout 0.1 and sigmoid as the activation function.
+		\item Model 2: Using pre-trained embeddings- The same baseline Bidirectional GRU model (Model 1) was rebuilt using three pre-trained embeddings, namely- Glove, Wiki News FastText and Paragram.
+\end{itemize}
+Finally the models were compiled using binary cross entropy and \say{adam} optimizer. The models carried out validation set predictions and test set predictions and calculated the F-1 score.
+
+\subsection{Observations}
+\begin{itemize}
+		\item The pre-trained embeddings model (Model 2) gave better results as compared to non pre-trained embeddings model (Model 1).
+		\item The performance of the different pre-trained embeddings used in Model 2 were almost similar to each other.\cite{Kaggle}
+\end{itemize}

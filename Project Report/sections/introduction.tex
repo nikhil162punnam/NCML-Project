@@ -1,0 +1,47 @@
+
+\section{Introduction}
+% TODO :
+Text mining is frequently being used as organizations recognize the unused information contained in the text. Social media platforms such as Facebook and Twitter, have been used effectively by organizations to uncover positive and negative trends that when identified through text mining, can be used to leverage the positive trends and provide corrective action to check any negative comments. 
+
+Quora\footnote{www.quora.com} is a platform that allows people to connect with each other, exchange their thoughts and learn from each other. It provides a medium for people to ask questions on a huge variety of topics to a wide audience and contribute in writing answers to them. As such there are people not exactly looking for answers more than to make a statement in such a platform. The project aims to weed out such insincere questions. 
+
+ The definition of an insincere question as given on the competition site \cite{QuoraKaggle} is as follows: `\textit{An insincere question is defined as a question intended to make a statement rather than look for helpful answers.}` The competition site \cite{QuoraKaggle} defines some characteristics that can signify that a question is insincere: 
+\textit{
+\begin{itemize}
+	\item Has a non-neutral tone
+	\begin{itemize}
+		\item Has an exaggerated tone to underscore a point about a group of people
+		\item Is rhetorical and meant to imply a statement about a group of people
+	\end{itemize}
+	\item Is disparaging or inflammatory
+	\begin{itemize}
+		\item Suggests a discriminatory idea against a protected class of people, or seeks confirmation of a stereotype
+		\item Makes disparaging attacks/insults against a specific person or group of people
+		\item Based on an outlandish premise about a group of people
+		\item Disparages against a characteristic that is not fixable and not measurable
+	\end{itemize}
+	\item Isn't grounded in reality
+	\begin{itemize}
+		\item Based on false information, or contains absurd assumptions
+		\item Uses sexual content (incest, bestiality, pedophilia) for shock value, and not to seek genuine answers
+	\end{itemize}
+\end{itemize}
+}
+
+\subsection{Data}
+The training dataset present on Kaggle is split into three fields  
+\begin{itemize}
+	\item qid - unique question identifier
+	\item question\_text - Quora question text
+	\item target - a question labeled \say{insincere} has a value of 1, otherwise 0
+\end{itemize} 
+The qid is a long integer and the question\_text field has only text and the target takes values from \{0, 1\} set. For this project we only use the question\_text field and qid is discarded. The text in the question\_text field is taken in as input as sequence of words to be fed into our model. \newline
+An example of each sincere and insincere question would be,
+\begin{table}[h]
+	\begin{tabular}{|l|l|l|}
+		\hline
+		qid                  & question\_text                                                                                                                              & target \\ \hline
+		00017146167b4072ae5f & \begin{tabular}[c]{@{}l@{}}If lightsabers are created by individual wielders, \\ does each saber have unique powers/abilities?\end{tabular} & 0      \\ \hline
+		00013ceca3f624b09f42 & \begin{tabular}[c]{@{}l@{}}Which babies are more sweeter to their parents? \\ Dark skin babies or light skin babies?\end{tabular}           & 1      \\ \hline
+	\end{tabular}
+\end{table}

@@ -1,0 +1,115 @@
+    \documentclass[oneside,a4paper]{article}
+
+% ========== Preamble (packages, definitions etc.) ==========
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{dirtytalk}
+\usepackage{mathtools}
+
+\newcommand{\todo}[1]{{\color{blue}#1}}  % show to-do items in blue
+\setlength{\parskip}{\baselineskip}
+\usepackage[activate={true,nocompatibility},
+            final,
+            tracking=true,
+            kerning=true,
+            spacing=nonfrench,
+            factor=1100,
+            stretch=10,
+            shrink=10]{microtype}
+\hypersetup{
+    pdftitle={Assignment 2 Report},
+    bookmarks=true,
+    pdfpagemode=FullScreen,
+}
+
+\newcounter{questionnum} \setcounter{questionnum}{0}
+
+\newcommand\filltoend{\leavevmode{\unskip
+  \leaders\hrule height.5ex depth\dimexpr-.5ex+0.4pt\hfill\hbox{}%
+  \parfillskip=0pt\endgraf}}
+  
+\newcommand*{\captionsource}[2]{%
+  \caption[{#1}]{%
+    #1%
+    \\\hspace{\linewidth}%
+    \textbf{Source:} #2%
+  }%
+}
+\newcommand{\problem}[2]{%
+	\vspace{-0.7em}
+	\hspace{0.02\textwidth}
+	\begin{minipage}[t][][b]{0.95\textwidth}
+		{\bf \hspace{-0.015\textwidth}\makebox[7.5em][l]{{#1} ~~\filltoend}}%
+		\hspace{1.2mm}{\it #2}%
+	\end{minipage}
+}
+
+\def\email#1{{\tt#1}}
+
+\lstset{ % Set the default style for code listings
+	numbers=left,
+	numberstyle=\scriptsize,
+	numbersep=8pt,
+	basicstyle=\scriptsize\ttfamily,
+	keywordstyle=\color{blue},
+	stringstyle=\color{red},
+	commentstyle=\color{green!70!black},
+	breaklines=true,
+	frame=single,
+	language=C,
+	tabsize=4,
+	showstringspaces=false
+}
+
+% ========== Title page ==========
+
+\title{
+	\includegraphics[width=0.6\textwidth]{UU_logo.pdf}\\[1em]
+	Report for Natural Computation Methods for Machine Learning\\[1em]
+	Project\\[3em]
+	Quora Insincere Questions Classification\\[3em]
+	Group 10
+}
+
+\author{
+    Vishnu Sharma\and
+	Nikhil Karthik Punnam\and
+	Phalguni Chopra
+}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} % Removes page number for front page
+\pagebreak
+
+\section *{Abstract}
+
+The project we have chosen to do is the Quora Insincere Questions Classification \cite{QuoraKaggle}. The goal is to classify the questions into binary categories, a sincere question or an insincere question. We explored a few of the existing text preprocessing techniques in conjunction with deep learning architecture like bi-directional Long Short Term Memory (LSTM) to classify the questions. Our architecture measured an F1-score of 0.57, which by no means is near the score of state of the art models but our main focus was to explore text processing techniques and different ways to to deal with common issues in textual data and see how our model is affected by them.
+
+% Bottom of the page
+
+
+\input{sections/introduction.tex}
+\input{sections/theory.tex}
+\input{sections/previous_work.tex}
+\input{sections/proposed_work.tex}
+\input{sections/results_future.tex}
+
+
+%for citing any reference add it in the .bib file and cite it using \cite{} command and pass the name which you gave it in .bib file it will be generated in the latex report automatically
+\pagebreak
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}

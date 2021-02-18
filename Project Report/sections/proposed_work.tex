@@ -1,0 +1,21 @@
+\section{Proposed Work}
+We have tried a bi-directional LSTM with both under sampling and Synthetic Minority Over-sampling (SMOTE) for our experiments. 
+\subsection{Pre-Processing}
+First, we preprocess the data which involves converting the input to lower case, fixing common contractions, removing punctuation, some common stop words and numbers and then lemmatizing the text. \newline
+After preprocessing, we observe that out of 1.3 million sentences, 1.2 million sentences are composed of 10 or less words. Hence, we decided that each input to the model should have 10 words in it. If a sentence has less words, then we pad it with appropriate number of padding text such that the sentence has 10 words otherwise, if a sentence has more than 10 words then we take first 10 words of the sentence under consideration. \newline
+Next, we build a dictionary item over this data, which holds all the unique words in our data as the key and a unique integer as its value. Also, we add an extra item to this dictionary as \say{unk} that describes the words that are not present in the training set, but present in the test data.\newline
+We split the input dataset into training, validation and test subset to evaluate our model. For this, we first create a test set which contains 10000 samples from the dataset chosen randomly. From the remaining data, we create training and validation set. Our training set holds 80\% of the data and the validation set has the remaining 20\% data.\par
+Since, we have a class imbalance problem here, we overcome this by using some sampling. For our experiments, we apply SMOTE and undersampling over the training set and compare the performance of the models trained on the data thus obtained. Our training set initially had 64810 insincere questions and 979762 sincere questions. SMOTE balances the uneven counts and generates dataset with same number of insincere and sincere questions i.e. 979762 samples of each class. SMOTE is proven to be beneficial for synthetic text generation if the input dimensions are not very high. In our case, we have 10-dimensional input data which benefits SMOTE. Similarly, undersampling creates a dataset that comprises of 64810 samples of each class. Using PyTorch Dataloader, we create batches of size 128 for training, test and validation datasets. Now that our data is ready to be fed to the model, we create a basic LSTM model, with two fully connected layer stacked over it. and train it for 20 epochs.\newline
+\subsection{Model Architecture}
+Our model comprises of 2 Layers of bidirectional LSTMs, each with 512 neurons. We use an embedding layer, which has rows as the number of items in the dictionary created earlier and 300 columns. Further, we use a dropout of 0.5 in the final layer. We average out the forward and backward feed results from the LSTM and then feed it to a fully connected layer which has batch normalization. Batch normalization normalizes the output of a previous activation layer by subtracting the batch mean and dividing by the batch standard deviation. It improves the stability of a neural network. Finally, we apply the sigmoid activation function over the output from previous step which in return gives us the binary text classification for the given input.\newline
+\subsection{Finetuning the parameters}
+We investigate the following parameters to check the performance of our model:
+\begin{itemize}
+    \item batch size: 64, 128, 256, 512
+    \item optimizers: adam, sgd, adamax, rmsprop, adagrad \cite{DBLP:journals/corr/Ruder16}
+    \item learning rate : 0.1, 0.001, 0.0001
+    \item activation function : softmax, sigmoid, relu, tanh \cite{eger-etal-2018-time}
+    \item dropout : 0.2,0.4,0.5,0.6,0.8 \cite{DBLP:journals/corr/abs-1207-0580}
+    \item number of layers for LSTM : 1,2,3,4
+\end{itemize}
+For this, we train the model using each of these parameters and choose the parameters for which the model performs the best over validation set.

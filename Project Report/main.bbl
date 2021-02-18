@@ -1,0 +1,91 @@
+\begin{thebibliography}{10}
+
+\bibitem{QuoraKaggle}
+Kaggle.
+\newblock Quora insincere questions classification, 2018.
+
+\bibitem{DBLP:journals/corr/abs-1808-03314}
+Alex Sherstinsky.
+\newblock Fundamentals of recurrent neural network {(RNN)} and long short-term
+  memory {(LSTM)} network.
+\newblock {\em CoRR}, abs/1808.03314, 2018.
+
+\bibitem{Schuster97bidirectionalrecurrent}
+Mike Schuster, Kuldip~K. Paliwal, and A.~General.
+\newblock Bidirectional recurrent neural networks.
+\newblock {\em IEEE Transactions on Signal Processing}, 1997.
+
+\bibitem{Manning:2008:IIR:1394399}
+Christopher~D. Manning, Prabhakar Raghavan, and Hinrich Sch\"{u}tze.
+\newblock {\em Introduction to Information Retrieval}.
+\newblock Cambridge University Press, New York, NY, USA, 2008.
+
+\bibitem{Loper:2002:NNL:1118108.1118117}
+Edward Loper and Steven Bird.
+\newblock Nltk: The natural language toolkit.
+\newblock pages 63--70, 2002.
+
+\bibitem{Sarkar:2016:TAP:3086768}
+Dipanjan Sarkar.
+\newblock {\em Text Analytics with Python: A Practical Real-World Approach to
+  Gaining Actionable Insights from Your Data}.
+\newblock Apress, Berkely, CA, USA, 1st edition, 2016.
+
+\bibitem{pennington2014glove}
+Jeffrey Pennington, Richard Socher, and Christopher~D. Manning.
+\newblock Glove: Global vectors for word representation.
+\newblock pages 1532--1543, 2014.
+
+\bibitem{DBLP:journals/corr/abs-1708-03629}
+Vikas Raunak.
+\newblock Effective dimensionality reduction for word embeddings.
+\newblock {\em CoRR}, abs/1708.03629, 2017.
+
+\bibitem{DBLP:journals/corr/MikolovSCCD13}
+Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado, and Jeffrey Dean.
+\newblock Distributed representations of words and phrases and their
+  compositionality.
+\newblock {\em CoRR}, abs/1310.4546, 2013.
+
+\bibitem{Thesis}
+Jon~Ezeiza Alvarez.
+\newblock A review of word embedding and document similarity algorithms applied
+  to academic text, October 2017.
+
+\bibitem{Liu:2009:ITC:1453254.1453338}
+Ying Liu, Han~Tong Loh, and Aixin Sun.
+\newblock Imbalanced text classification: A term weighting approach.
+\newblock {\em Expert Syst. Appl.}, 36(1):690--701, January 2009.
+
+\bibitem{DBLP:journals/corr/abs-1106-1813}
+Kevin~W. Bowyer, Nitesh~V. Chawla, Lawrence~O. Hall, and W.~Philip Kegelmeyer.
+\newblock {SMOTE:} synthetic minority over-sampling technique.
+\newblock {\em CoRR}, abs/1106.1813, 2011.
+
+\bibitem{Kaggle1}
+Kaggle.
+\newblock Gru + capsule, 2018.
+
+\bibitem{Kaggle}
+Kaggle.
+\newblock A look at different embeddings, 2018.
+
+\bibitem{DBLP:journals/corr/Ruder16}
+Sebastian Ruder.
+\newblock An overview of gradient descent optimization algorithms.
+\newblock {\em CoRR}, abs/1609.04747, 2016.
+
+\bibitem{eger-etal-2018-time}
+Steffen Eger, Paul Youssef, and Iryna Gurevych.
+\newblock Is it time to swish? comparing deep learning activation functions
+  across {NLP} tasks.
+\newblock pages 4415--4424, October-November 2018.
+
+\bibitem{DBLP:journals/corr/abs-1207-0580}
+Geoffrey~E. Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and
+  Ruslan Salakhutdinov.
+\newblock Improving neural networks by preventing co-adaptation of feature
+  detectors.
+\newblock {\em CoRR}, abs/1207.0580, 2012.
+
+\end{thebibliography}
